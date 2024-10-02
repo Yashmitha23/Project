@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    /* Background video styling */
+    #background-video {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1; /* Ensures the video stays behind the content */
+    }
+
+    /* Navigation bar */
+    nav {
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 20px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 100;
+      text-align: center;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 18px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ff6600;
+    }
+
+    /* Text styling */
+    .centered-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .centered-text h1 {
+      font-size: 60px;
+      color: #fff;
+      font-family: 'Brush Script MT', cursive; /* Calligraphy style font */
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    }
+
+    .centered-text p {
+      font-size: 24px;
+      margin-top: 20px;
+      color: #ddd;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Video -->
+  <video autoplay muted loop id="background-video">
+    <source src="C:/Users/krish/OneDrive/Desktop/Art gallery/homebg.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="homepage.html">HOME PAGE</a>
+    <a href="aboutus.html">ABOUT US</a>
+    <a href="gallery.html">GALLERY</a>
+    <a href="blog.html">BLOG</a>
+    <a href="contactus.html">CONTACTS</a>
+  </nav>
+
+  <!-- Centered Text -->
+  <div class="centered-text">
+    <h1>Discover the World of Art</h1>
+    <p>Explore the beauty and creativity of our gallery</p>
+  </div>
+
+</body>
+</html>

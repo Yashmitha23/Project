@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Art Gallery Topics</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #fff;
+    }
+
+    /* Background video styling */
+    #background-video {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%; 
+      min-height: 100%;
+      z-index: -1;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 20px;
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      z-index: 1; /* To make sure content is above the video */
+      position: relative;
+    }
+
+    h1 {
+      font-size: 48px;
+      color: #fff;
+      margin-bottom: 40px;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    }
+
+    .gallery-topic {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .topic-card {
+      background-color: rgba(255, 255, 255, 0.8);
+      margin: 20px;
+      width: 200px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      padding: 20px;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .topic-card:hover {
+      transform: scale(1.05);
+    }
+
+    .topic-card h3 {
+      font-size: 20px;
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    .topic-card img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .topic-card a {
+      text-decoration: none;
+      color: #4CAF50;
+      font-weight: bold;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Background video -->
+  <video autoplay muted loop id="background-video">
+    <source src="C:\Users\krish\OneDrive\Desktop\Art gallery\homebg1.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="container">
+    <h1>Welcome to the Art Gallery</h1>
+    <div class="gallery-topic">
+      <!-- Different Topics -->
+      <div class="topic-card">
+        <h3>Abstract Art</h3>
+        <a href="abstract.html"><img src="C:\Users\krish\OneDrive\Desktop\Art gallery\AA.png" alt="Abstract Art"></a>
+      </div>
+
+      <div class="topic-card">
+        <h3>Modern Art</h3>
+        <a href="modern.html"><img src="C:\Users\krish\OneDrive\Desktop\Art gallery\MA.png" alt="Modern Art"></a>
+      </div>
+
+      <div class="topic-card">
+        <h3>Classical Art</h3>
+        <a href="classical.html"><img src="C:\Users\krish\OneDrive\Desktop\Art gallery\CA.png" alt="Classical Art"></a>
+      </div>
+
+      <div class="topic-card">
+        <h3>Landscape</h3>
+        <a href="landscape.html"><img src="C:\Users\krish\OneDrive\Desktop\Art gallery\LA.png" alt="Landscape Art"></a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

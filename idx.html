@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Art Gallery Login</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-size: cover;
+      background-position: center;
+      transition: background-image 1s ease-in-out; /* Smooth transition */
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.5); /* Slightly dark overlay */
+    }
+
+    h1 {
+      color: #fff;
+      margin-bottom: 40px;
+    }
+
+    .button {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      background-color: #45a049;
+    }
+
+    .form-container {
+      display: none;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .form-container input {
+      width: 80%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .form-container button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .form-container button:hover {
+      background-color: #45a049;
+    }
+
+    .error {
+      color: red;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Welcome to the Art Gallery</h1>
+
+  <!-- Login and Register buttons -->
+  <button class="button" id="login-btn">Login</button>
+  <button class="button" id="register-btn">Register</button>
+
+  <!-- Login Form -->
+  <div class="form-container" id="login-form">
+    <h2>Login</h2>
+    <input type="text" id="login-username" placeholder="Username" required>
+    <input type="password" id="login-password" placeholder="Password" required>
+    <button onclick="login()">Login</button>
+    <p class="error" id="login-error">Login failed! Incorrect username or password.</p>
+  </div>
+
+  <!-- Register Form -->
+  <div class="form-container" id="register-form">
+    <h2>Register</h2>
+    <input type="text" id="register-username" placeholder="Choose a Username" required>
+    <input type="password" id="register-password" placeholder="Choose a Password" required>
+    <button onclick="register()">Register</button>
+    <p class="error" id="register-error">Please fill out all fields.</p>
+  </div>
+</div>
+
+<script>
+  // Array to hold your background images
+  const backgroundImages = [
+    'img1.jpg',  // Replace with relative path
+    'img2.jpg',  // Replace with relative path
+    'img3.jpg'   // Replace with relative path
+  ];
+
+  let currentImageIndex = 0;
+  const changeInterval = 5000; // Time in milliseconds (5000 = 5 seconds)
+
+  // Function to change the background image
+  function changeBackgroundImage() {
+    document.body.style.backgroundImage = `url(${backgroundImages[currentImageIndex]})`;
+    currentImageIndex = (currentImageIndex + 1) % backgroundImages.length; // Loop through images
+  }
+
+  // Set interval to change background image every few seconds
+  setInterval(changeBackgroundImage, changeInterval);
+
+  // Basic user storage for demonstration
+  let users = [];
+
+  // Toggle between forms
+  document.getElementById('login-btn').addEventListener('click', function() {
+    document.getElementById('login-form').style.display = 'block';
+    document.getElementById('register-form').style.display = 'none';
+  });
+
+  document.getElementById('register-btn').addEventListener('click', function() {
+    document.getElementById('register-form').style.display = 'block';
+    document.getElementById('login-form').style.display = 'none';
+  });
+
+  // Register new user
+  function register() {
+    const username = document.getElementById('register-username').value;
+    const password = document.getElementById('register-password').value;
+    const errorElement = document.getElementById('register-error');
+
+    if (username === '' || password === '') {
+      errorElement.style.display = 'block';
+      return;
+    }
+
+    // Check if user already exists
+    if (users.find(user => user.username === username)) {
+      errorElement.innerText = 'Username already exists!';
+      errorElement.style.display = 'block';
+    } else {
+      users.push({ username, password });
+      alert('Registration successful! You can now log in.');
+      errorElement.style.display = 'none';
+      document.getElementById('register-form').style.display = 'none';
+    }
+  }
+
+  // Login function
+  function login() {
+    const username = document.getElementById('login-username').value;
+    const password = document.getElementById('login-password').value;
+    const errorElement = document.getElementById('login-error');
+
+    // Check if user exists and password matches
+    const user = users.find(user => user.username === username && user.password === password);
+
+    if (user) {
+      alert('Login successful! Welcome to the home page.');
+      window.location.href = "home.html"; // Redirect to home page after successful login
+    } else {
+      errorElement.style.display = 'block';
+    }
+  }
+
+  // Initialize the first background image
+  changeBackgroundImage();
+</script>
+
+</body>
+</html>

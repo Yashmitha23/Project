@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Art Gallery Topics</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    /* Background video styling */
+    #background-video {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%; 
+      min-height: 100%;
+      z-index: -1;
+    }
+
+    /* Navbar styling */
+    nav {
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 20px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 100;
+      text-align: center;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 18px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ff6600;
+    }
+
+    /* Banner Section Styling */
+    .banner {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .banner h1 {
+      font-size: 60px;
+      color: #fff;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    }
+
+    .banner p {
+      font-size: 20px;
+      color: #ddd;
+      margin-top: 10px;
+    }
+
+    /* About the gallery box */
+    .about {
+      padding: 50px;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .about h2 {
+      font-size: 36px;
+      color: #ff6600;
+    }
+
+    .about p {
+      font-size: 18px;
+      color: #ccc;
+      max-width: 800px;
+      margin: 20px auto;
+      line-height: 1.6;
+    }
+
+    /* Gallery topics section */
+    .gallery-topic {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 50px 0;
+      z-index: 1;
+    }
+
+    .topic-card {
+      background-color: rgba(255, 255, 255, 0.8);
+      margin: 20px;
+      width: 200px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      padding: 20px;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .topic-card:hover {
+      transform: scale(1.05);
+    }
+
+    .topic-card h3 {
+      font-size: 20px;
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    .topic-card img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .topic-card a {
+      text-decoration: none;
+      color: #4CAF50;
+      font-weight: bold;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Background video -->
+  <video autoplay muted loop id="background-video">
+    <source src="C:\Users\krish\OneDrive\Desktop\Art gallery\homebg1.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Navbar -->
+  <nav>
+    <a href="#">HOME PAGE</a>
+    <a href="aboutus.html">ABOUT US</a>
+    <a href="home.html">GALLERY</a>
+    <a href="blog.html">BLOG</a>
+    <a href="contactus.html">CONTACTS</a>
+  </nav>
+
+  <!-- Banner Section -->
+  <div class="banner">
+    <div>
+      <h1>OUR GALLERY</h1>
+      <p>IS A BRAND NEW VISUAL ARTS INSTITUTION BUILDING UPON A SOUND FOUNDATION OF SCHOLARSHIP AND EXPERIENCE</p>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <div class="about">
+    <h2>About The Gallery</h2>
+    <p>The gallery features original works by contemporary and traditional artists in a range of mediums, including painting, ceramics, and sculpture. Our artists come from Philadelphia and around the country. Many of the city's most well-known and emerging artists have exhibited their works in group and solo shows.</p>
+  </div>
+
+  <!-- Gallery Topics Section -->
+  <div class="container">
+    <div class="gallery-topic">
+      <div class="topic-card">
+        <h3>Abstract Art</h3>
+        <a href="abstract.html"><img src="abstract_image.jpg" alt="Abstract Art"></a>
+      </div>
+
+      <div class="topic-card">
+        <h3>Modern Art</h3>
+        <a href="modern.html"><img src="modern_image.jpg" alt="Modern Art"></a>
+      </div>
+
+      <div class="topic-card">
+        <h3>Classical Art</h3>
+        <a href="classical.html"><img src="classical_image.jpg" alt="Classical Art"></a>
+      </div>
+
+      <div class="topic-card">
+        <h3>Landscape</h3>
+        <a href="landscape.html"><img src="landscape_image.jpg" alt="Landscape Art"></a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
